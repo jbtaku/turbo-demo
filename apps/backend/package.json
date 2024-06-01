@@ -26,5 +26,6 @@
     "prisma": "^5.14.0",
     "wrangler": "^3.57.2"
   },
-  "main": "src/index.ts"
+  "main": "src/index.ts",
+  "types": "src/index.ts"
 }
