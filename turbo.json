@@ -4,17 +4,18 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
     "db:migrate:deploy": {},
-    "db:generate": {},
     "db:push": {},
-    "lint": {
-      "dependsOn": ["^lint"]
-    },
+    "db:seed": {},
     "dev": {
       "cache": false,
       "persistent": true
-    }
+    },
+    "generate": {
+      "dependsOn": ["^generate"]
+    },
+    "lint": {}
   }
 }
