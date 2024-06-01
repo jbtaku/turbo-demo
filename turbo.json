@@ -6,6 +6,9 @@
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
+    "db:migrate:deploy": {},
+    "db:generate": {},
+    "db:push": {},
     "lint": {
       "dependsOn": ["^lint"]
     },
