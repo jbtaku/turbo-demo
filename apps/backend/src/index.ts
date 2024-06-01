@@ -25,7 +25,7 @@ const app = new Hono<PrismaContext>()
   );
 
 export * from "@hono/zod-validator";
-export * from "../prisma/generated/zod";
+//export * from "../prisma/generated/zod";
 export * from "./lib/prisma";
 export type AppType = typeof app;
 export default app;
