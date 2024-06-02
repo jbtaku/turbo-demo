@@ -2,17 +2,10 @@
   "name": "backend",
   "private": true,
   "scripts": {
-    "db:migrate:deploy": "prisma migrate deploy",
-    "db:migrate:dev": "prisma migrate dev",
-    "db:push": "prisma db push",
-    "db:seed": "tsx src/seed.ts",
     "dev": "wrangler dev src/index.ts",
-    "format": "prisma format",
-    "generate": "prisma generate",
-    "lint": "eslint . --max-warnings 0",
-    "prebuild": "npm run generate",
-    "predev": "npm run generate",
-    "studio": "prisma studio"
+    "deploy": "wrangler deploy --minify src/index.ts",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push --skip-generate"
   },
   "dependencies": {
     "@hono/zod-validator": "^0.2.2",
