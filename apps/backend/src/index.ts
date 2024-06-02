@@ -24,6 +24,7 @@ const app = new Hono<PrismaContext>()
     }
   );
 
+export * from "@cloudflare/workers-types"
 export * from "@hono/zod-validator";
 //export * from "../prisma/generated/zod";
 export * from "./lib/prisma";
