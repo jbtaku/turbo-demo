@@ -4,6 +4,10 @@ import { PrismaContext, prismaContext } from "./lib/prisma";
 import { z } from "zod";
 //import { PrefectureCreateInputSchema } from "../prisma/generated/zod";
 
+export * from "@cloudflare/workers-types"
+export * from "@hono/zod-validator";
+export * from "../prisma/generated/zod";
+
 const app = new Hono<PrismaContext>()
   .get("/", async (c) => {
     const prisma = prismaContext(c);
@@ -24,9 +28,5 @@ const app = new Hono<PrismaContext>()
     }
   );
 
-export * from "@cloudflare/workers-types"
-export * from "@hono/zod-validator";
-//export * from "../prisma/generated/zod";
-export * from "./lib/prisma";
 export type AppType = typeof app;
 export default app;
