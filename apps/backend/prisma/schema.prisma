@@ -17,6 +17,6 @@ datasource db {
 
 model Prefecture {
   id           Int    @id @default(autoincrement())
-  prefectureId String @unique
+  prefectureId String
   name         String
 }

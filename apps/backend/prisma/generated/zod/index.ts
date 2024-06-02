@@ -64,24 +64,15 @@ export const PrefectureOrderByWithRelationInputSchema: z.ZodType<Prisma.Prefectu
   name: z.lazy(() => SortOrderSchema).optional()
 }).strict();
 
-export const PrefectureWhereUniqueInputSchema: z.ZodType<Prisma.PrefectureWhereUniqueInput> = z.union([
-  z.object({
-    id: z.number().int(),
-    prefectureId: z.string()
-  }),
-  z.object({
-    id: z.number().int(),
-  }),
-  z.object({
-    prefectureId: z.string(),
-  }),
-])
+export const PrefectureWhereUniqueInputSchema: z.ZodType<Prisma.PrefectureWhereUniqueInput> = z.object({
+  id: z.number().int()
+})
 .and(z.object({
   id: z.number().int().optional(),
-  prefectureId: z.string().optional(),
   AND: z.union([ z.lazy(() => PrefectureWhereInputSchema),z.lazy(() => PrefectureWhereInputSchema).array() ]).optional(),
   OR: z.lazy(() => PrefectureWhereInputSchema).array().optional(),
   NOT: z.union([ z.lazy(() => PrefectureWhereInputSchema),z.lazy(() => PrefectureWhereInputSchema).array() ]).optional(),
+  prefectureId: z.union([ z.lazy(() => StringFilterSchema),z.string() ]).optional(),
   name: z.union([ z.lazy(() => StringFilterSchema),z.string() ]).optional(),
 }).strict());
 
