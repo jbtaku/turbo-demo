@@ -1,6 +1,7 @@
 import React from "react";
 import { client } from "../lib/hono";
 
+export const runtime = "edge"
 export const fetchCache = "default-no-store";
 
 async function Page() {
