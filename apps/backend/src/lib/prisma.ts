@@ -14,5 +14,5 @@ export const prismaContext = (c: Context<PrismaContext>) => {
   return prisma;
 };
 
-//export * from "@prisma/client";
-//export * from "@prisma/adapter-d1";
+export * from "@prisma/client";
+export * from "@prisma/adapter-d1";
