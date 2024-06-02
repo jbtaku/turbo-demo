@@ -2,10 +2,11 @@ import { Hono } from "hono";
 import { zValidator } from "@hono/zod-validator";
 import { PrismaContext, prismaContext } from "./lib/prisma";
 import { z } from "zod";
+import { PrefectureCreateInputSchema } from "../prisma/generated/zod";
 //import { PrefectureCreateInputSchema } from "../prisma/generated/zod";
 
-//export * from "@hono/zod-validator";
-//export * from "../prisma/generated/zod";
+export * from "@hono/zod-validator";
+export * from "../prisma/generated/zod";
 
 const app = new Hono<PrismaContext>()
   .get("/", async (c) => {
@@ -16,7 +17,7 @@ const app = new Hono<PrismaContext>()
   })
   .post(
     "/",
-    zValidator("json", z.object({ name: z.string(), prefectureId: z.string() })),
+    zValidator("json", PrefectureCreateInputSchema),
     async (c) => {
       const prisma = prismaContext(c);
       const { name, prefectureId } = c.req.valid("json");

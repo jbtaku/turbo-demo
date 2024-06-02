@@ -2,7 +2,7 @@ import { PrismaClient } from "@prisma/client";
 import { PrismaD1 } from "@prisma/adapter-d1";
 import { Context } from "hono";
 import { D1Database } from "@cloudflare/workers-types";
-//export { D1Database } from "@cloudflare/workers-types";
+export { D1Database } from "@cloudflare/workers-types";
 
 export interface PrismaContext {
   Bindings: { DB: D1Database };

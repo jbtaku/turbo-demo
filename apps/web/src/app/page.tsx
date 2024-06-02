@@ -12,7 +12,7 @@ async function Page() {
   const data = await res.json();
   return (
     <div>
-      {data?.map((item) => (
+      {data.map((item) => (
         <p key={item.id}>{item.name}</p>
       ))}
     </div>
