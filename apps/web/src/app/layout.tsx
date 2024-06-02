@@ -1,6 +1,7 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Noto_Sans_JP } from "next/font/google";
+import Provider from "./Provider";
 
 const NotoSansJp = Noto_Sans_JP({ subsets: ["latin"] });
 
@@ -10,6 +11,11 @@ export const metadata: Metadata = {
   robots: { index: false },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1.0,
+  maximumScale: 1.0,
+};
 export default function RootLayout({
   children,
 }: {
@@ -17,7 +23,11 @@ export default function RootLayout({
 }): JSX.Element {
   return (
     <html lang="ja">
-      <body className={NotoSansJp.className}>{children}</body>
+      <body className={NotoSansJp.className}>
+        <Provider>
+          <div className="my-6 w-4/5 mx-auto">{children}</div>
+        </Provider>
+      </body>
     </html>
   );
 }
