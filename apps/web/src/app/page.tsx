@@ -1,8 +1,6 @@
 import React from "react";
 import { client } from "../lib/hono";
-
-//export const dynamic = "force-dynamic";
-export const fetchCache = "force-no-store";
+//export const fetchCache = "default-no-store";
 
 async function Page() {
   /* await client.index.$post({
