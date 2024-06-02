@@ -3,8 +3,8 @@ import { zValidator } from "@hono/zod-validator";
 import { PrismaContext, prismaContext } from "./lib/prisma";
 import { PrefectureCreateInputSchema } from "../prisma/generated/zod";
 
-export * from "@hono/zod-validator";
-export * from "../prisma/generated/zod";
+//export * from "@hono/zod-validator";
+//export * from "../prisma/generated/zod";
 
 const app = new Hono<PrismaContext>()
   .get("/", async (c) => {
