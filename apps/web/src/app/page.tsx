@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useEffect, useState } from "react";
 import { client } from "../lib/hono";
@@ -16,20 +16,14 @@ function Page() {
     }[]
   >();
   useEffect(() => {
-    async () => {
+    (async () => {
       const res = await client.index.$get();
       const data = await res.json();
       setData(data);
-    };
+    })();
   });
 
-  return (
-    <div>
-      {data?.map((item) => (
-        <p key={item.id}>{item.name}</p>
-      ))}
-    </div>
-  );
+  return <div>{data?.map((item) => <p key={item.id}>{item.name}</p>)}</div>;
 }
 
 export default Page;
