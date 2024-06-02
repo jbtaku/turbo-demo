@@ -2,11 +2,6 @@ name = "backend"
 compatibility_date = "2023-12-01"
 compatibility_flags = ["nodejs_compat"]
 
-[[d1_databases]]
-binding = "DB" # i.e. available in your Worker on env.DB
-database_name = "myapp-db"
-database_id = "515d033a-5b7c-4f2d-9fe7-f8e99cbb3bcd"
-
 # [vars]
 # MY_VAR = "my-variable"
 
