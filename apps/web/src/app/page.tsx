@@ -1,7 +1,7 @@
 import React from "react";
 import { client } from "../lib/hono";
 
-export const dynamic = "force-dynamic";
+//export const dynamic = "force-dynamic";
 export const fetchCache = "force-no-store";
 
 async function Page() {
