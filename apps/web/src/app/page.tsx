@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import { client } from "../lib/hono";
-import { Prefecture } from "backend/src/lib/prisma";
 
 function Page() {
   /* const res = await client.index.$post({
@@ -21,7 +20,7 @@ function Page() {
       const data = await res.json();
       setData(data);
     })();
-  });
+  },[]);
 
   return <div>{data?.map((item) => <p key={item.id}>{item.name}</p>)}</div>;
 }
