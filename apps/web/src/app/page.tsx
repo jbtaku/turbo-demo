@@ -1,6 +1,9 @@
 import React from "react";
 import { client } from "../lib/hono";
 
+export const dynamic = "force-dynamic";
+export const fetchCache = "no-store";
+
 async function Page() {
   /* await client.index.$post({
     json: { name: "bio", prefectureId: "idTestooo" },
