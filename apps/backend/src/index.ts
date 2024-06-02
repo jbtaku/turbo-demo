@@ -1,9 +1,7 @@
 import { Hono } from "hono";
 import { zValidator } from "@hono/zod-validator";
 import { PrismaContext, prismaContext } from "./lib/prisma";
-import { z } from "zod";
 import { PrefectureCreateInputSchema } from "../prisma/generated/zod";
-//import { PrefectureCreateInputSchema } from "../prisma/generated/zod";
 
 export * from "@hono/zod-validator";
 export * from "../prisma/generated/zod";
