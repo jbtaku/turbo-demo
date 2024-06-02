@@ -2,7 +2,6 @@ import { PrismaClient } from "@prisma/client";
 import { PrismaD1 } from "@prisma/adapter-d1";
 import { Context } from "hono";
 import { D1Database } from "@cloudflare/workers-types";
-//export { D1Database } from "@cloudflare/workers-types";
 
 export interface PrismaContext {
   Bindings: { DB: D1Database };
@@ -13,6 +12,3 @@ export const prismaContext = (c: Context<PrismaContext>) => {
 
   return prisma;
 };
-
-//export * from "@prisma/client";
-//export * from "@prisma/adapter-d1";
