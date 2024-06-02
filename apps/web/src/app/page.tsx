@@ -1,6 +1,8 @@
 import React from "react";
 import { client } from "../lib/hono";
 
+export const dynamic = "force-dynamic"
+
 async function Page() {
   /* const res = await client.index.$post({
     json: { name: "test", prefectureId: "idTestooo" },
