@@ -1,17 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { client } from "../lib/hono";
+import { Prefecture } from "backend/src/lib/prisma";
 
-export const dynamic = "force-dynamic"
-
-async function Page() {
+function Page() {
   /* const res = await client.index.$post({
     json: { name: "test", prefectureId: "idTestooo" },
   }); */
-  const res = await client.index.$get();
-  const data = await res.json();
+  const [data, setData] = useState<
+    {
+      id: number;
+      prefectureId: string;
+      name: string;
+    }[]
+  >();
+  useEffect(() => {
+    async () => {
+      const res = await client.index.$get();
+      const data = await res.json();
+      setData(data);
+    };
+  });
+
   return (
     <div>
-      {data.map((item) => (
+      {data?.map((item) => (
         <p key={item.id}>{item.name}</p>
       ))}
     </div>
