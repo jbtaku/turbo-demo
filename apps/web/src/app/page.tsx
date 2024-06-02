@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useEffect, useState } from "react";
 import { client } from "../lib/hono";
 import { Prefecture } from "backend/src/lib/prisma";
