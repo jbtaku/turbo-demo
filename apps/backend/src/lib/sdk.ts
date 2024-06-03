@@ -5,13 +5,7 @@ import { DefaultArgs } from "@prisma/client/runtime/library";
 import { Context } from "hono";
 import Stripe from "stripe";
 
-let prisma: PrismaClient<
-  {
-    adapter: PrismaD1;
-  },
-  never,
-  DefaultArgs
->;
+let prisma
 let stripe: Stripe;
 let isAlreadyInited = false;
 
