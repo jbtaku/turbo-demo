@@ -1,11 +1,17 @@
 import { Hono } from "hono";
-import { PrismaClient } from "@prisma/client";
 import { PrismaD1 } from "@prisma/adapter-d1";
 import { DefaultArgs } from "@prisma/client/runtime/library";
 import { Context } from "hono";
 import Stripe from "stripe";
+import { PrismaClient } from "../../../../node_modules/.prisma/client/index";
 
-let prisma
+let prisma: PrismaClient<
+  {
+    adapter: PrismaD1;
+  },
+  never,
+  DefaultArgs
+>;
 let stripe: Stripe;
 let isAlreadyInited = false;
 
