@@ -12,6 +12,7 @@
     "@prisma/adapter-d1": "^5.14.0",
     "@prisma/client": "^5.14.0",
     "hono": "^4.4.2",
+    "stripe": "^15.8.0",
     "zod-prisma-types": "^3.1.8"
   },
   "devDependencies": {
