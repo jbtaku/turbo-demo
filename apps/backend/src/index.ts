@@ -5,6 +5,8 @@ import { DefaultArgs } from "@prisma/client/runtime/library";
 import { Context } from "hono";
 //import Stripe from "stripe";
 
+export { PrismaClient } from "@prisma/client";
+
 let prisma: PrismaClient<
   {
     adapter: PrismaD1;
